@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber Price</title>
+</head>
+<script>
+    class Person {
+        constructor(name, age, gender, address) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.address = address;
+        }
+
+        getDetails() {
+            return `${this.name}, Age: ${this.age}, Gender: ${this.gender}, Address: ${this.address}`;
+        }
+    }
+
+    class Uber {
+        constructor(distance, ratePerKm = 20) {
+            this.distance = distance; 
+            this.ratePerKm = ratePerKm;
+        }
+
+        calculatePrice() {
+            return this.distance * this.ratePerKm;
+        }
+    }
+
+    function displayInfo() {
+        const person1 = new Person("John Doe", 30, "Male", "123 Main St");
+        const ride = new Uber(15);
+        
+        document.getElementById('personDetails').innerText = person1.getDetails();
+        document.getElementById('uberPrice').innerText = `The total price is ₹${ride.calculatePrice()}`;
+    }
+
+    window.onload = displayInfo; 
+</script>
+</head>
+<body>
+<h1>Person Details</h1>
+<p id="personDetails"></p>
+<h1>Uber Price Calculation</h1>
+<p id="uberPrice"></p>
+</body>
+</html>
